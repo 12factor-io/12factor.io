@@ -8,5 +8,11 @@ README.md
 `make website`
 
 ## Build website
-`make build` 
+`make build`
 
+# Middleman commands
+## Initialize blog
+
+> Note on linux I had to set my TLS directory using `env SSL_CERT_DIR=/etc/ssl/certs/` before running some commands
+
+`middleman init --template=blog`

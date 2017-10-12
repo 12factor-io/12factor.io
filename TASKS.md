@@ -1,7 +1,7 @@
 # CI / CD website:
 Phase AWS
-- [ ] Middleman
-	- [ ] Setup blogging template correctly
+- [x] Middleman
+	- [x] Setup blogging template correctly
 	- [x] Setup make build for the website
 
 - [ ] Travis
@@ -54,7 +54,7 @@ Phase AWS
 ## New
 - [ ] Testing using docker (i.e. with go program)
 - [ ] Testing using pacts
-- [ ] 
+- [ ]
 
 ## Cloud native (12 factor)
 ??
