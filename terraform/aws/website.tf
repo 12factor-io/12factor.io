@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "web" {
+resource "aws_s3_bucket" "website" {
   bucket  = "${module.environment.website_bucket_name}"
   acl     = "public-read"
   tags {
@@ -11,7 +11,7 @@ resource "aws_s3_bucket" "web" {
 }
 
 data "template_file" "s3_public_policy" {
-  template = "${file("policies/website_bucket.json")}"
+  template = "${file("${path.module}/policies/website_bucket.json")}"
   vars {
     bucket_name = "${module.environment.website_bucket_name}"
   }

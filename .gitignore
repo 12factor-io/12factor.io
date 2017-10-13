@@ -1,8 +1,4 @@
 .bundle
 .cache
 .DS_Store
-.sass-cache
-build/
-.idea/
-commandoutput.log
-.terraform
+

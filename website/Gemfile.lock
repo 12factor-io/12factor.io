@@ -95,6 +95,8 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2017.2)
+      tzinfo (>= 1.0.0)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
 
@@ -106,7 +108,7 @@ DEPENDENCIES
   middleman (~> 4.1)
   middleman-blog
   redcarpet (~> 3.3, >= 3.3.3)
-  tzinfo-data
+  tzinfo-data (~> 1.2017, >= 1.2017.2)
   wdm (~> 0.1.0)
 
 BUNDLED WITH
