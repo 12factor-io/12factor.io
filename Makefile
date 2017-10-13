@@ -1,6 +1,6 @@
-.DEFAULT_GOAL := build terraform
+.DEFAULT_GOAL := build
 
-build: website
+build: website terraform
 
 website:
 	$(MAKE) --print-directory  -C website

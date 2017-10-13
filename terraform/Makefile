@@ -1,8 +1,9 @@
-.DEFAULT_GOAL := s3dir plan
+.DEFAULT_GOAL := build
 
 .terraform:
 	terraform get -update=true
 
+build: s3dir plan
 configure:
 	go get github.com/saymedia/terraform-s3-dir
 	go install github.com/saymedia/terraform-s3-dir
@@ -17,4 +18,4 @@ s3dir:
 	go get github.com/saymedia/terraform-s3-dir
 	go install github.com/saymedia/terraform-s3-dir
 	terraform-s3-dir ../website/build/ '${module.environment.website_bucket_name}' > aws/middleman_files.tf
-.PHONY: .terraform plan apply configure s3dir
+.PHONY: .terraform plan apply configure s3dir build
