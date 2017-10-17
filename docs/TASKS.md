@@ -1,35 +1,32 @@
 # CI / CD website:
 Phase AWS
 - [x] Middleman
-	- [x] Setup blogging template correctly
-	- [x] Setup make build for the website
+  - [x] Setup blogging template correctly
+  - [x] Setup make build for the website
 
-- [x] Travis
-	- [x] Call top-level `make`
-		- [x] website make
-		- [x] terraform make
+- [ ] Travis
+  - [ ] Call top-level `make`
+    - [ ] website make
+    - [ ] terraform make
 
 - [ ] Terraform
-	- [x] Make file
-		- [x] [terraform-s3-dir build directory of website](https://github.com/saymedia/terraform-s3-dir)
-		- [x] git ignore generated tf files
-	- [x] AWS provider
-		- [x] Create bucket
-	- [ ] DNS
-		- aws.12factor.io / 12factor.io
+  - [ ] Make file
+    - [x] [terraform-s3-dir build directory of website](https://github.com/saymedia/terraform-s3-dir)
+    - [x] git ignore generated tf files
+  - [ ] AWS provider
+    - [x] Create bucket
+  - [ ] DNS
+    - aws.12factor.io / 12factor.io
 
 - [ ] DNS
-	- [ ] Delegate 12factor.io to AWS nameservers
-  - [ ] Create subdomains
-    * dev.12factor.io
-    * aws.dev.12facotr.io
+  - [ ] Delegate 12factor.io to AWS nameservers
 
 - [ ] Create article on the above
 
 # Company tasks
 - [ ] Homepage
-	* https://weareadaptive.com/
-	* https://www.featurist.co.uk/
+  * https://weareadaptive.com/
+  * https://www.featurist.co.uk/
 
 
 # Blog post
@@ -64,8 +61,3 @@ Phase AWS
 
 ## Multicloud
 - [ ] Website deploy to multicloud
-
-
-
-
-

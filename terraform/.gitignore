@@ -2,3 +2,5 @@ middleman_files.tf
 plan
 commandoutput.log
 .terraform
+terraform.tfstate
+terraform.tfvars
