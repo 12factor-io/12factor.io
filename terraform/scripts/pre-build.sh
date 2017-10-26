@@ -14,6 +14,6 @@ gen_random_filename() {
 
 
 export ENVIRONMENT="${TRAVIS_BRANCH:-develop}"
-export STACK_NAME=$(gen_random_filename)   # or result=`myfunc`
+export STACK_NAME="${STACK_NAME:-gen_random_filename}"   # or result=`myfunc`
 
 envsubst '${ENVIRONMENT},${STACK_NAME}' < "$DIR/terraform.tfvars.tpl" > "$DIR/../terraform.tfvars"
