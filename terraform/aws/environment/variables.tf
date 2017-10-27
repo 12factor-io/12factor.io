@@ -11,8 +11,8 @@ variable "stack_name" {
 variable "default_base_fqdn" {
   type = "map"
   default = {
-    development = "aws.dev.12factor.io",
-    test    = "aws.test.12factor.io",
+    development = "aws.development.12factor.io",
+    test        = "aws.test.12factor.io",
     production  = "aws.prod.12factor.io"
   }
 }
