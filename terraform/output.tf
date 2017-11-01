@@ -1,3 +1,7 @@
+output "aws_website_url" {
+  value = "${module.aws.website_url}"
+}
+
 output "aws_website_bucket_url" {
   value = "${module.aws.website_bucket_url}"
 }

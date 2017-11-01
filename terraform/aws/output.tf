@@ -1,5 +1,9 @@
 output "website_bucket_url" {
-  value = "${aws_s3_bucket.website.bucket}.s3-website-${var.region}.amazonaws.com"
+  value = "http://${aws_s3_bucket.website.bucket}.s3-website-${var.region}.amazonaws.com"
+}
+
+output "website_url" {
+  value = "http://${aws_route53_record.www.fqdn}"
 }
 
 output "base_env_zone_id" {

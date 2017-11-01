@@ -1,13 +1,17 @@
 resource "aws_s3_bucket" "website" {
-  bucket  = "${module.environment.website_bucket_name}"
+  bucket  = "www.${aws_route53_record.stack-nameserver.fqdn}"
   acl     = "public-read"
   tags {
-    Name        = "${module.environment.website_bucket_name}"
+    Name        = "www.${aws_route53_record.stack-nameserver.fqdn}" // Bucket name must be fqdn of hosted domain
     Environment = "${var.environment}"
     Stack       = "${var.stack_name}"
   }
 
   policy  = "${data.template_file.s3_public_policy.rendered}"
+
+  website {
+    index_document = "index.html"
+  }
 }
 
 data "aws_route53_zone" "base-env-zone" {
@@ -35,13 +39,17 @@ resource "aws_route53_record" "stack-nameserver" {
 resource "aws_route53_record" "www" {
   zone_id = "${aws_route53_zone.stack-zone.id}"
   name    = "www"
-  type    = "CNAME"
-  records = ["${aws_s3_bucket.website.bucket}.s3-website-${var.region}.amazonaws.com"]
+  type    = "A"
+  alias {
+    evaluate_target_health = false
+    name = "${aws_s3_bucket.website.website_domain}"
+    zone_id = "${aws_s3_bucket.website.hosted_zone_id}"
+  }
 }
 
 data "template_file" "s3_public_policy" {
   template = "${file("${path.module}/policies/website_bucket.json")}"
   vars {
-    bucket_name = "${module.environment.website_bucket_name}"
+    bucket_name = "www.${aws_route53_record.stack-nameserver.fqdn}"
   }
 }
