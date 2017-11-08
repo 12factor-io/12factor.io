@@ -4,11 +4,9 @@ TERRAFORM_VERSION = 0.10.8
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
     OS = linux
-    USR_LOCAL = "./"
 endif
 ifeq ($(UNAME_S),Darwin)
     OS = darwin
-	USR_LOCAL = "/usr/local/bin"
 endif
 
 UNAME_P := $(shell uname -m)
@@ -33,7 +31,7 @@ terraform:
 install:
 	@if [ ! -s /usr/local/bin/terraform ]; then \
 		wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_${OS}_${PROCESSOR}.zip -O terraform.zip; \
-		unzip -o terraform.zip -d ${USR_LOCAL}; \
+		unzip terraform.zip; \
 		rm terraform.zip; \
 	fi;
 .PHONY: build website terraform install
