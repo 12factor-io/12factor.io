@@ -4,7 +4,7 @@ TERRAFORM_VERSION = 0.10.8
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
     OS = linux
-    USR_LOCAL = "~/bin"
+    USR_LOCAL = "./"
 endif
 ifeq ($(UNAME_S),Darwin)
     OS = darwin
