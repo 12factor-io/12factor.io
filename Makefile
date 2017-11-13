@@ -31,6 +31,8 @@ terraform:
 install:
 	@echo ${PATH}
 	@echo ${GOPATH}
+	ls /usr/local/bin
+	which go
 	go version
 	@if [ ! -s /usr/local/bin/terraform ]; then \
 		wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_${OS}_${PROCESSOR}.zip -O terraform.zip; \
