@@ -20,7 +20,6 @@ apply:
 	terraform apply plan | tee -a commandoutput.log
 
 s3dir:
-	go version
 	go get github.com/saymedia/terraform-s3-dir
 	go install github.com/saymedia/terraform-s3-dir
 	terraform-s3-dir ../website/build/ '$${aws_s3_bucket.website.bucket}' > aws/middleman_files.tf
