@@ -14,7 +14,7 @@ tfvars:
 	scripts/pre-build.sh
 
 configure:
-	go version
+	echo go version
 	go get github.com/saymedia/terraform-s3-dir
 	go install github.com/saymedia/terraform-s3-dir
 
