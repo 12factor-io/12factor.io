@@ -33,7 +33,7 @@ install:
 	@echo ${GOPATH}
 	ls /usr/local/bin
 	printenv
-	/home/travis/.gimme/versions/go1.9.linux.amd64/go version
+	/home/travis/.gimme/versions/go1.9.linux.amd64/bin/go version
 	@if [ ! -s /usr/local/bin/terraform ]; then \
 		wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_${OS}_${PROCESSOR}.zip -O terraform.zip; \
 		unzip -p terraform.zip terraform >/usr/local/bin/terraform; \
