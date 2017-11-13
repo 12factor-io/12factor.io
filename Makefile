@@ -31,8 +31,8 @@ terraform:
 install:
 	@if [ ! -s /usr/local/bin/terraform ]; then \
 		wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_${OS}_${PROCESSOR}.zip -O terraform.zip; \
-		sudo unzip -p terraform.zip terraform >/usr/local/bin/terraform; \
-		sudo chmod +x /usr/local/bin/terraform; \
+		unzip -p terraform.zip terraform >/usr/local/bin/terraform; \
+		chmod +x /usr/local/bin/terraform; \
 		rm terraform.zip; \
 	fi;
 .PHONY: build website terraform install
