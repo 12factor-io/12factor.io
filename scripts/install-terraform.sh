@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -ex
 TERRAFORM_VERSION=0.10.8
 OS=linux
 PROCESSOR=amd64
