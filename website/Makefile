@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := travis
 
 VERSION?="0.1"
 
@@ -23,4 +23,7 @@ website:
 		--volume "$(shell pwd):/website" \
 		12factor/middleman-12factor:${VERSION}
 
-.PHONY: build website
+travis:
+	go version
+
+.PHONY: build website travis

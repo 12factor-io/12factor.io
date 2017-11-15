@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := travis
+.DEFAULT_GOAL := build
 
 TERRAFORM_VERSION = 0.10.8
 UNAME_S := $(shell uname -s)
@@ -29,11 +29,7 @@ terraform:
 	$(MAKE) --print-directory  -C terraform
 
 install:
-	@echo ${PATH}
-	@echo ${GOPATH}
-	ls /usr/local/bin
-	printenv
-	/home/travis/.gimme/versions/go1.9.linux.amd64/bin/go version
+	go version
 	@if [ ! -s /usr/local/bin/terraform ]; then \
 		wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_${OS}_${PROCESSOR}.zip -O terraform.zip; \
 		unzip -p terraform.zip terraform >/usr/local/bin/terraform; \
