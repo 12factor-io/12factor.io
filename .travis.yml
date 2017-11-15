@@ -1,6 +1,8 @@
 language: go
 services:
 - docker
+before_install:
+- ./scripts/install-terraform.sh
 script:
 - make
 env:
