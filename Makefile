@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := travis
 
 TERRAFORM_VERSION = 0.10.8
 UNAME_S := $(shell uname -s)
@@ -40,4 +40,7 @@ install:
 		chmod +x /usr/local/bin/terraform; \
 		rm terraform.zip; \
 	fi;
-.PHONY: build website terraform install
+
+travis:
+	go version
+.PHONY: build website terraform install travis
